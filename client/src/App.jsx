@@ -19,7 +19,6 @@ import CartPage from './pages/CartPage';
 import Dashboard from './pages/user/Dashboard';
 import Orders from './pages/user/Orders';
 import Profile from './pages/user/Profile';
-import Users from './pages/user/Users';
 
 // Admin Dashboard
 import AdminDashboard from './pages/Admin/AdminDashboard';
@@ -27,9 +26,9 @@ import CreateCategory from './pages/Admin/CreateCategory';
 import CreateProduct from './pages/Admin/CreateProduct';
 import Products from './pages/Admin/Products';
 import UpdateProduct from './pages/Admin/UpdateProduct';
+import Users from './pages/user/Users';
 import AdminOrders from './pages/Admin/AdminOrders';
 
-import PrivateRoute from './components/Routes/Private';
 import ScrollToTop from './components/ScrollToTop';
 
 function App() {
@@ -52,7 +51,6 @@ function App() {
         <Route path='/policy' element={<Policy />} />
 
         {/* User Dashboard Routes */}
-        <Route path='/dashboard' element={<Dashboard />} />
         <Route path='/dashboard/user' element={<Dashboard />}>
           <Route path='orders' element={<Orders />} />
           <Route path='profile' element={<Profile />} />
@@ -60,12 +58,12 @@ function App() {
 
         {/* Admin Dashboard Routes */}
         <Route path='/dashboardadmin' element={<AdminDashboard />}>
-          <Route path='admin/create-category' element={<CreateCategory />} />
-          <Route path='admin/create-product' element={<CreateProduct />} />
-          <Route path='admin/products' element={<Products />} />
-          <Route path='product/:slug' element={<UpdateProduct />} />
-          <Route path='admin/users' element={<Users />} />
-          <Route path='admin/orders' element={<AdminOrders />} />
+          <Route path='create-category' element={<CreateCategory />} />
+          <Route path='create-product' element={<CreateProduct />} />
+          <Route path='products' element={<Products />} />
+          <Route path='update-product/:slug' element={<UpdateProduct />} />
+          <Route path='users' element={<Users />} />
+          <Route path='orders' element={<AdminOrders />} />
         </Route>
 
         {/* 404 Page */}
