@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/Layout/Layout';
-import UserMenu from '../../components/layout/UserMenu';
+import UserMenu from '../../components/Layout/UserMenu';
 import { useAuth } from '../../context/auth';
 import { Outlet, useLocation } from 'react-router-dom';
 import "../../styles/UserDashboard.css";
