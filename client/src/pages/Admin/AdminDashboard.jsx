@@ -1,6 +1,6 @@
 import React from 'react';
 import Layout from '../../components/Layout/Layout';
-import AdminMenu from '../../components/layout/AdminMenu';
+import AdminMenu from '../../components/Layout/AdminMenu';
 import { useAuth } from '../../context/auth';
 import { Outlet, useLocation } from 'react-router-dom';
 import "../../styles/AdminDashboard.css";
