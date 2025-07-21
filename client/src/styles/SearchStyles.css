@@ -1,0 +1,206 @@
+:root {
+  --primary-color: #3498db;
+  --secondary-color: #2ecc71;
+  --transition: all 0.3s ease-in-out;
+}
+
+/* Search Page Container */
+/* ================================
+   Search Page Layout & Heading
+================================ */
+.search-page {
+  margin: 2rem auto;
+  max-width: 1400px;
+  padding: 100px 1rem 1rem; /* Match fixed header spacing */
+  width: 100%;
+  text-align: center;
+  scroll-margin-top: 100px;
+}
+
+/* Search Title Heading */
+.search-page h1 {
+  font-size: 1.8rem;
+  font-weight: 700;
+  color: #2d3748;
+  text-transform: uppercase;
+  position: relative;
+  display: inline-block;
+  padding-bottom: 10px;
+  margin-bottom: 1.5rem;
+}
+
+/* Decorative Underline */
+.search-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: 0;
+  left: 50%;
+  transform: translateX(-50%);
+  width: 100%;
+  height: 4px;
+  background: linear-gradient(90deg, #3595e4, #48bb78);
+  border-radius: 2px;
+}
+
+/* ================================
+   Results Count (Subtext)
+================================ */
+.search-page .results-count {
+  font-size: 1.1rem;
+  text-transform: uppercase;
+  color: #4a5568;
+  background-color: #f8fafc;
+  padding: 0.5rem 1.25rem;
+  border-radius: 20px;
+  display: inline-block;
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.05);
+  margin-top: 1rem;
+  text-align: center;
+}
+
+
+/* Product Grid */
+.search-page .d-flex.flex-wrap {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 1.5rem;
+  justify-content: flex-start;
+  width: 100%;
+}
+
+/* Product Card */
+.search-page .card {
+  background: rgba(255, 255, 255, 0.95);
+  border: none;
+  border-radius: 12px;
+  box-shadow: 0 6px 15px rgba(0, 0, 0, 0.08);
+  overflow: hidden;
+  transition: all 0.3s ease;
+  width: calc(25% - 1.5rem);
+  min-width: 250px;
+  margin-bottom: 1.5rem;
+}
+
+.search-page .card:hover {
+  transform: translateY(-10px);
+  box-shadow: 0 12px 25px rgba(0, 0, 0, 0.12);
+}
+
+.search-page .card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: contain;
+  padding: 1rem;
+  background: #f8f9fa;
+  transition: transform 0.5s ease;
+}
+
+.search-page .card:hover .card-img-top {
+  transform: scale(1.05);
+}
+
+/* Card Body */
+.search-page .card-body {
+  padding: 1.5rem;
+}
+
+.search-page .card-name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 1rem;
+}
+
+.search-page .card-title {
+  font-size: 1.2rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.5rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.search-page .card-price {
+  color: #27ae60;
+  font-weight: 700;
+  font-size: 1rem;
+  background: rgba(39, 174, 96, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.search-page .card-text {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin-bottom: 1rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+ 
+}
+
+/* Button Styles */
+.search-page .btn-container {
+  display: flex;
+  gap: 0.5rem;
+  margin-top: 1rem;
+}
+
+.search-page .custom-btn {
+  flex: 1;
+  border: none;
+  font-size: 0.8rem;
+  font-weight: bold;
+  border-radius: 6px;
+  padding: 0.5rem 0.75rem;
+  text-transform: uppercase;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  transition: var(--transition);
+  cursor: pointer;
+}
+
+.search-page .custom-btn:hover {
+  background: linear-gradient(135deg, #2980b9, #27ae60);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+}
+
+/* Responsive Layout */
+@media (max-width: 1200px) {
+  .search-page .card {
+    width: calc(33.333% - 1.5rem);
+  }
+}
+
+@media (max-width: 992px) {
+  .search-page .card {
+    width: calc(50% - 1.5rem);
+  }
+}
+
+@media (max-width: 576px) {
+  .search-page {
+    padding-top: 70px;
+  }
+
+  .search-page .card {
+    width: 100%;
+    max-width: 300px;
+    margin: 0 auto 1.5rem;
+  }
+
+  .search-page .card-img-top {
+    height: 180px;
+  }
+
+  .search-page .btn-container {
+    flex-direction: column;
+  }
+
+  .search-page .custom-btn {
+    width: 100%;
+  }
+}

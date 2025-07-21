@@ -1,0 +1,400 @@
+:root {
+  --primary-color: #2c3e50;
+  --secondary-color: #3498db;
+  --accent-color: #e74c3c;
+  --text-color: #34495e;
+  --light-gray: #ecf0f1;
+  --dark-gray: #bdc3c7;
+  --success-color: #27ae60;
+  --box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+  --transition: all 0.3s ease;
+}
+
+/* =================
+   LAYOUT
+================= */
+.home-page {
+  display: flex;
+  flex-wrap: nowrap;
+  gap: 1.5rem;
+  align-items: flex-start;
+  max-width: 1400px;
+  margin: 0 auto;
+  padding: 0.8rem;
+  scroll-margin-top: 100px; /* Fix scroll jump issue */
+}
+
+/* =================
+   FILTERS SIDEBAR
+================= */
+.filters {
+  width: 240px;
+  flex-shrink: 0;
+  position: sticky;
+  top: 80px;
+  background: white;
+  padding: 2rem 1rem 1rem;
+  border-radius: 8px;
+  box-shadow: var(--box-shadow);
+  height: fit-content;
+  overflow: hidden;
+}
+
+.filters h4 {
+  font-weight: 600;
+  padding-bottom: 0.5rem;
+  border-bottom: 1px solid var(--light-gray);
+  margin-bottom: 0.8rem;
+  font-size: 0.95rem;
+}
+
+.ant-checkbox-wrapper,
+.ant-radio-wrapper {
+  margin: 6px 0;
+  color: var(--text-color);
+  font-size: 0.9rem;
+}
+
+.filters button {
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  width: 100%;
+  border: none;
+  border-radius: 6px;
+  padding: 0.65rem 1rem;
+  margin: 1.5rem auto 0;
+  color: #fff;
+  font-weight: 600;
+  font-size: 0.85rem;
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+  transition: var(--transition);
+  cursor: pointer;
+  display: block;
+  text-align: center;
+}
+
+.filters button:hover {
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  transform: translateY(-1px);
+  box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+}
+
+/* =================
+   PRODUCTS GRID
+================= */
+.home-page > .card-container {
+  flex-grow: 1;
+  display: grid;
+  grid-template-columns: repeat(auto-fill, minmax(220px, 1fr));
+  gap: 1.2rem;
+  width: 100%;
+}
+
+.home-page h1 {
+  color: var(--primary-color);
+  font-family: "Playfair Display", serif;
+  font-weight: 700;
+  font-size: 2rem;
+  margin: 0 0 1.5rem 0;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  text-align: center;
+}
+
+.home-page h1::after {
+  content: '';
+  position: absolute;
+  bottom: -8px;
+  height: 3px;
+  width: 60%;
+  background: linear-gradient(to right, var(--secondary-color), var(--accent-color));
+  border-radius: 2px;
+  left: 50%;
+  transform: translateX(-50%);
+}
+
+/* =================
+   PRODUCT CARDS
+================= */
+.home-page .card {
+  background-color: white;
+  border: none;
+  border-radius: 8px;
+  overflow: hidden;
+  box-shadow: var(--box-shadow);
+  transition: var(--transition);
+  width: 100%;
+  margin: 0;
+  max-width: 272px;
+}
+
+.home-page .card:hover {
+  transform: translateY(-3px);
+  box-shadow: 0 6px 12px rgba(0, 0, 0, 0.1);
+}
+
+.home-page .card-img-top {
+  height: 200px;
+  width: 100%;
+  object-fit: cover;
+  transition: var(--transition);
+}
+
+.home-page .card img:hover {
+  transform: scale(1.02);
+}
+
+.home-page .card-body {
+  padding: 0.6rem;
+}
+
+.card-name-price {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.4rem;
+}
+
+.card-title {
+  font-size: 1rem;
+  font-weight: 600;
+  color: #2c3e50;
+  margin-bottom: 0.75rem;
+  white-space: nowrap;
+  overflow: hidden;
+  text-overflow: ellipsis;
+}
+
+.card-price {
+  color: #27ae60;
+  font-weight: 700;
+  font-size: 1rem;
+  background: rgba(11, 86, 42, 0.1);
+  padding: 0.3rem 0.8rem;
+  border-radius: 20px;
+}
+
+.card-text {
+  color: #7f8c8d;
+  font-size: 0.95rem;
+  margin-bottom: 1.25rem;
+  line-height: 1.5;
+  display: -webkit-box;
+  -webkit-box-orient: vertical;
+  overflow: hidden;
+}
+
+.btn-container {
+  display: flex;
+  gap: 0.7rem;
+  margin-top: 1rem;
+}
+
+.home-page button {
+  border-radius: 5px;
+  width: 100%;
+  border: none;
+  font-size: 0.75rem;
+  font-weight: bold;
+  background: linear-gradient(to right, var(--primary-color), var(--secondary-color));
+  color: white;
+  padding: 0.5rem;
+  cursor: pointer;
+  transition: var(--transition);
+  text-transform: uppercase;
+  letter-spacing: 0.5px;
+}
+
+.home-page button:hover {
+  background: linear-gradient(135deg, #2980b9, #27ae60);
+  transform: translateY(-2px);
+  box-shadow: 0 4px 12px rgba(41, 128, 185, 0.3);
+}
+
+/* =================
+   LOAD MORE
+================= */
+.loadmore {
+  font-weight: bold;
+  font-size: 0.9rem;
+  padding: 0.5rem 1rem;
+  border: 2px solid var(--success-color);
+  border-radius: 40px;
+  background: transparent;
+  transition: var(--transition);
+  margin: 1.5rem auto 0.8rem;
+  display: block;
+  text-align: center;
+  cursor: pointer;
+  max-width: 180px;
+}
+
+.loadmore:hover {
+  background: var(--success-color);
+  color: white;
+  transform: translateY(-2px);
+  box-shadow: 0 4px 10px rgba(39, 174, 96, 0.2);
+}
+
+/* =================
+   BANNER SECTION
+================= */
+.banner-container {
+  margin-top: 40px;
+  border-radius: 12px;
+  box-shadow: 0 10px 30px rgba(0, 0, 0, 0.15);
+  width: 100%;
+  min-height: 220px;
+  padding: 30px 20px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: linear-gradient(135deg, #6e8efb, #a777e3, #ff8f6e);
+  margin-bottom: 1.2rem;
+  position: relative;
+  overflow: hidden;
+  transition: all 0.5s ease;
+  border: 1px solid rgba(255, 255, 255, 0.2);
+  box-sizing: border-box;
+}
+
+.banner-content {
+  text-align: center;
+  z-index: 1;
+  padding: 20px;
+  color: white;
+  max-width: 800px;
+  width: 100%;
+  backdrop-filter: blur(2px);
+}
+
+.banner-title {
+  font-size: clamp(2rem, 4vw, 2.8rem);
+  font-weight: 800;
+  margin-bottom: 0.8rem;
+  text-shadow: 2px 2px 10px rgba(0, 0, 0, 0.4);
+  animation: fadeInDown 0.8s ease;
+  font-family: 'Montserrat', sans-serif;
+  color: #ffffff;
+  background: none;
+  -webkit-text-fill-color: unset;
+  position: relative;
+  line-height: 1.2;
+  padding: 0 15px;
+}
+
+.banner-subtitle {
+  font-size: clamp(1rem, 2vw, 1.3rem);
+  margin-bottom: 1.5rem;
+  color: #f1f1f1;
+  text-shadow: 1px 1px 6px rgba(0, 0, 0, 0.4);
+  animation: fadeInUp 0.8s ease 0.2s both;
+  font-weight: 400;
+  max-width: 600px;
+  margin-left: auto;
+  margin-right: auto;
+  line-height: 1.5;
+  padding: 0 15px;
+}
+
+.banner-button {
+  background: white;
+  color: #a777e3;
+  border: none;
+  padding: 12px 30px;
+  font-size: clamp(0.9rem, 2vw, 1.1rem);
+  font-weight: 700;
+  border-radius: 50px;
+  cursor: pointer;
+  transition: all 0.4s cubic-bezier(0.175, 0.885, 0.32, 1.275);
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.15);
+  animation: fadeIn 1s ease 0.4s both;
+  position: relative;
+  overflow: hidden;
+  display: inline-block;
+  margin-top: 10px;
+}
+
+/* =================
+   RESPONSIVE
+================= */
+@media (max-width: 992px) {
+  .home-page {
+    flex-wrap: wrap;
+  }
+
+  .filters {
+    width: 100%;
+    position: static;
+    margin-bottom: 1.5rem;
+    top: 0;
+  }
+
+  .home-page > .card-container {
+    grid-template-columns: repeat(auto-fill, minmax(200px, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .banner-container {
+    padding: 20px 15px;
+    min-height: 180px;
+    padding-top: 80px; /* ✅ Push content inside banner down */
+  }
+
+  .banner-content {
+    padding: 10px;
+  }
+
+  .banner-button {
+    padding: 10px 25px;
+  }
+
+  .filters {
+    position: relative;
+    top: unset;
+    width: 100%;
+    margin-top: 1rem;
+    margin-bottom: 1rem;
+    overflow-y: auto;
+    max-height: 400px;
+    padding-top: 0.5rem;
+  }
+}
+
+
+
+@media (max-width: 576px) {
+  .home-page > .card-container {
+    grid-template-columns: 1fr;
+  }
+
+  .home-page h1 {
+    font-size: 1.6rem;
+    text-align: center;
+  }
+
+  .home-page h1::after {
+    left: 50%;
+    transform: translateX(-50%);
+    width: 60px;
+  }
+
+  .home-page .card-img-top {
+    height: 180px;
+  }
+
+  .banner-container {
+    min-height: 160px;
+    margin-top: 30px;
+  }
+
+  .banner-title {
+    margin-bottom: 0.5rem;
+  }
+
+  .banner-subtitle {
+    margin-bottom: 1rem;
+  }
+}
